@@ -46,13 +46,14 @@ Live URL: [https://buy-indian-companies.onrender.com](https://buy-indian-compani
 
 ## 🚀 To Run Locally
 
-1. Clone this repository
+1. Clone this repository  
 2. Install dependencies:  
-   `pip install flask yfinance`
+   `pip install flask yfinance`  
 3. Start the app:  
-   `python app.py`
+   `python app.py`  
 4. Open in browser:  
-   `http://127.0.0.1:5000`
+   `http://127.0.0.1:5000`  
+5. **Update data periodically by running your update script manually** (e.g., `python daily_update.py`) to refresh the JSON data used by the app.
 
 ---
 
