@@ -190,8 +190,8 @@
                     <td class="margin-cell">{{ company['Profit Margin'] }}%</td>
                     <td class="pe-cell">{{ company['P/E Ratio'] }}</td>
                     <td class="holding-cell">{{ company['Promoter Holding'] }}%</td>
-                    <td class="revenue-cell">₹{{ company['Revenue'] }}</td>
-                    <td class="marketcap-cell">₹{{ company['Market Cap'] }}</td>
+                    <td class="revenue-cell">₹{{ company['Revenue']|int }}</td>
+                    <td class="marketcap-cell">₹{{ company['Market Cap']|int }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
