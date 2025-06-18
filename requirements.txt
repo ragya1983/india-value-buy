@@ -1,5 +1,5 @@
-setuptools>=65.0.0
-wheel
+setuptools>=65.5.0
+wheel>=0.38.4
 Flask==2.3.3
 yfinance==0.2.36
 pandas>=2.2.2,<2.4.0
