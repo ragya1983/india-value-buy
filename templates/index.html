@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>India Value Buy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f7f9fc, #dfeaf5);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #1a237e, #3949ab);
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+        .hero {
+            max-width: 900px;
+            margin: 70px auto 40px auto;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+        .hero h2 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #005581;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cta {
+            margin-top: 30px;
+        }
+        .cta a {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 14px 28px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 3px 8px rgba(0, 119, 204, 0.3);
+            transition: background-color 0.25s ease;
+        }
+        .cta a:hover {
+            background-color: #0050a0;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin: 50px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    India Value Buy
+</header>
+
+<div class="hero">
+    <h2>Find value. Spot potential. Invest smartly.</h2>
+    <p>Our tool surfaces financially distressed or undervalued Indian companies—firms that may be struggling now, but hold long-term potential. Built on public data, and presented with clarity.</p>
+
+    <div class="cta">
+        <a href="/logic">💡 See Our Simple Logic →</a>
+        <a href="/explore">📈 Explore Attractive Companies →</a>
+        <form method="get" action="/search" style="display: flex; gap: 8px; justify-content: center; align-items: center; margin-top: 10px;">
+            <input type="text" name="ticker" placeholder="Enter Ticker (e.g. TCS.NS)" style="padding: 10px; border-radius: 4px; border: 1px solid #ccc; width: 220px;" />
+            <button type="submit" style="background-color: #0077cc; color: white; padding: 10px 18px; border-radius: 4px; border: none; font-weight: bold; cursor: pointer;">🔍 Search by Ticker</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>This web application is a prototype created as part of the CS50 final project. It analyzes financial health of over <strong>1,116 Indian listed companies</strong> to help identify potential acquisition targets.</p>
+</footer>
+
+</body>
+</html>

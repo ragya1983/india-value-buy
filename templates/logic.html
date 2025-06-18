@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Our Logic | India Value Buy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f7f9fc, #dfeaf5);
+        }
+        header {
+            background: linear-gradient(to right, #1a237e, #3949ab);
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 17px;
+            color: #333;
+            line-height: 1.7;
+        }
+        h1 {
+            font-size: 30px;
+            color: #1c3f60;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        tbody tr:hover {
+            background-color: #f0f8ff;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        India Value Buy
+    </header>
+    <div class="content">
+        <h1>The Attractive Index</h1>
+        <p>The <strong>India Value Buy</strong> score helps spot stressed but valuable companies — ideal for turnarounds, acquisitions, or value investing. Each company gets a score out of 100 based on these 5 factors:</p>
+
+        <table style="width:100%; border-collapse: collapse; margin-top: 20px; border-radius: 8px; overflow: hidden;">
+            <thead>
+                <tr style="background-color: #e8f0fe;">
+                    <th style="text-align: left; padding: 12px;">Parameter</th>
+                    <th style="text-align: left; padding: 12px;">Rationale</th>
+                    <th style="text-align: left; padding: 12px;">Scoring</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #e9f7ef;">
+                    <td style="padding: 12px;"><strong>Debt to Equity<br>(Max 25)</strong></td>
+                    <td style="padding: 12px;">High debt may mean stress — attractive for acquirers.</td>
+                    <td style="padding: 12px;">≥ 20 → 25<br>≥ 10 → 15<br>≥ 5 → 10<br>&lt; 5 → 0</td>
+                </tr>
+                <tr style="background-color: #fef9e7;">
+                    <td style="padding: 12px;"><strong>Profit Margin<br>(Max 15)</strong></td>
+                    <td style="padding: 12px;">A stressed company must still be making some money.</td>
+                    <td style="padding: 12px;">≥ 20% → 15<br>≥ 10% → 10<br>≥ 5% → 5<br>&lt; 5% → 0</td>
+                </tr>
+                <tr style="background-color: #f9ebea;">
+                    <td style="padding: 12px;"><strong>P/E Ratio<br>(Max 25)</strong></td>
+                    <td style="padding: 12px;">Low valuation may mean market overreaction.</td>
+                    <td style="padding: 12px;">≤ 10 → 25<br>≤ 15 → 15<br>≤ 20 → 5<br>&gt; 20 → 0</td>
+                </tr>
+                <tr style="background-color: #e8f8f5;">
+                    <td style="padding: 12px;"><strong>Promoter Holding<br>(Max 20)</strong></td>
+                    <td style="padding: 12px;">High holding implies promoter confidence.</td>
+                    <td style="padding: 12px;">≥ 70% → 20<br>≥ 50% → 15<br>≥ 30% → 10<br>&lt; 30% → 0</td>
+                </tr>
+                <tr style="background-color: #f4ecf7;">
+                    <td style="padding: 12px;"><strong>Revenue<br>(Max 15)</strong></td>
+                    <td style="padding: 12px;">We prefer big companies with problems — not small ones.</td>
+                    <td style="padding: 12px;">≥ ₹1,00,000 Cr → 15<br>≥ ₹50,000 Cr → 10<br>≥ ₹10,000 Cr → 5<br>&lt; ₹10,000 Cr → 0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><em>Note: Promoter Holding is scraped from public sources and not verified. Use at your own discretion.</em></p>
+
+        <div style="text-align:center; margin-top:30px;">
+            <a href="{{ url_for('index') }}" style="margin-right: 20px; text-decoration: none; color: white; background-color: #2c3e50; padding: 10px 20px; border-radius: 5px;">🏠 Back to Home</a>
+            <a href="{{ url_for('explore') }}" style="text-decoration: none; color: white; background-color: #0077cc; padding: 10px 20px; border-radius: 5px;">🔍 Explore Companies</a>
+        </div>
+    </div>
+</body>
+</html>

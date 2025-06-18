@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Details | Buy Indian Companies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f7f9fc, #e0ecf8);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #e1e4e8;
+        }
+        h1 {
+            color: #1c3f60;
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 28px;
+        }
+        .summary {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .summary strong {
+            color: #2c3e50;
+        }
+        .score-box {
+            background-color: #f0fdf4;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 6px solid #2ecc71;
+            margin-top: 30px;
+        }
+        .score-box h2 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button-group a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease;
+        }
+        .button-group a:hover {
+            background-color: #005fa3;
+        }
+        .highlight-button {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 0 0 rgba(0, 119, 204, 0.7);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 119, 204, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 119, 204, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 119, 204, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    {% if company %}
+    <div class="container">
+        <h1>{{ company['Company Name'] }}</h1>
+
+        <div class="summary">
+            <p><strong>Ticker:</strong> {{ company['Ticker'] }}</p>
+            <p><strong>Sector:</strong> {{ company['Sector'] }}</p>
+            <p><strong>Debt to Equity:</strong> {{ company['Debt to Equity'] }}</p>
+            <p><strong>Profit Margin:</strong> {{ company['Profit Margin'] }}%</p>
+            <p><strong>P/E Ratio:</strong> {{ company['P/E Ratio'] }}</p>
+            <p><strong>Promoter Holding:</strong> {{ company['Promoter Holding'] }}%</p>
+            <p><strong>Revenue:</strong> ₹{{ company['Revenue']|int }}</p>
+        </div>
+
+        <div class="score-box">
+            <h2>Total Score: {{ company['Score'] }} / 100</h2>
+            <p>
+                High score suggests potential undervaluation or turnaround opportunity.
+                Based on strong metrics like low P/E or high promoter holding.
+                <a href="{{ url_for('logic') }}">View scoring method</a>.
+            </p>
+        </div>
+
+        <div class="summary">
+            <p><strong>📌 Summary:</strong> Key financials indicate this company may be a strategic buy.
+            Use the Yahoo link below for further stock details.</p>
+        </div>
+
+        <div class="button-group">
+            <a href="https://finance.yahoo.com/quote/{{ company['Ticker'] }}" target="_blank" class="highlight-button">📈 Get More Financials from Yahoo</a>
+            <a href="{{ url_for('explore') }}">🔙 Back to Explore</a>
+            <a href="{{ url_for('index') }}">🏠 Home</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="container">
+        <h1>Company Not Found</h1>
+        <p>We could not find the company you searched for. Please check the ticker symbol and try again.</p>
+        <div class="button-group">
+            <a href="{{ url_for('index') }}">🏠 Home</a>
+            <a href="{{ url_for('search_redirect') }}">🔍 Back to Search</a>
+            <a href="{{ url_for('explore') }}">🔍 Explore Companies</a>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>

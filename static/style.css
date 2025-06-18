@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+}
+
+.score-low {
+    color: red;
+    font-weight: bold;
+}
+
+.score-medium {
+    color: #ffc107; /* yellow */
+    font-weight: bold;
+}
+
+.score-high {
+    color: green;
+    font-weight: bold;
+}
+
+.table-striped tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-control {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.hero {
+    padding: 60px 20px 40px;
+    background: linear-gradient(120deg, #e3f2fd, #ffffff);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.hero h2 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #333;
+    max-width: 600px;
+    margin: auto;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 20px;
+    gap: 20px;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 25px 30px;
+    width: 220px;
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 26px;
+    color: #007bff;
+    margin: 0 0 8px;
+}
+
+.stat-box p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}
+
+.cta {
+    text-align: center;
+    margin: 40px 0 10px;
+}
+
+.cta a {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    display: inline-block;
+}
+
+.cta a:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    color: #444;
+}
+
+.footer h3 {
+    margin-top: 0;
+    color: #333;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore Companies | India Value Buy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        header {
+            background: linear-gradient(to right, #1a237e, #3949ab);
+            padding: 25px 0;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f7f9fc, #dfeaf5);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1c3f60;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .filters select,
+        .filters input[type="text"] {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background-color: #e8f0fe;
+            font-weight: 600;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f0f8ff;
+            cursor: pointer;
+        }
+        .note {
+            font-size: 15px;
+            color: #555;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button-group a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0 8px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease;
+        }
+        .button-group a:hover {
+            background-color: #005fa3;
+        }
+        .score-cell {
+            font-weight: bold;
+            color: white;
+            background-color: #2ecc71;
+            border-radius: 8px;
+            padding: 8px 14px;
+            text-align: center;
+        }
+        .debt-cell {
+            background-color: #fdebd0;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+        .margin-cell {
+            background-color: #d6eaf8;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+        .pe-cell {
+            background-color: #f9e79f;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+        .holding-cell {
+            background-color: #e8daef;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+        .revenue-cell {
+            background-color: #f2f4f4;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+        .marketcap-cell {
+            background-color: #eafaf1;
+            border-radius: 6px;
+            padding: 6px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        India Value Buy
+    </header>
+    <div class="container">
+
+        <div class="filters" style="display: flex; flex-direction: column; gap: 10px;">
+            <form method="get" action="/explore">
+                <select id="sector-filter" name="sector" onchange="this.form.submit()" style="width: 100%; padding: 8px;">
+                    <option value="">-- Filter by Sector --</option>
+                    {% for sector in sectors %}
+                        <option value="{{ sector }}" {% if sector == selected_sector %}selected{% endif %}>{{ sector }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            <form onsubmit="event.preventDefault(); const ticker = this.ticker.value.trim(); if (ticker) { window.location.href = '/company/' + ticker; }" style="width: 100%;">
+                <input type="text" name="ticker" placeholder="Search by Ticker (e.g. TCS.NS)" style="width: 100%; padding: 8px;" />
+            </form>
+        </div>
+
+        <h2 style="color: #1c3f60; margin-bottom: 20px;">Explore Companies</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Sector</th>
+                    <th>Score</th>
+                    <th>Debt/Equity</th>
+                    <th>Profit Margin</th>
+                    <th>P/E Ratio</th>
+                    <th>Promoter Holding</th>
+                    <th>Revenue (in ₹ crore)</th>
+                    <th>Market Cap<br>(in ₹ crore)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for company in top_companies %}
+                <tr onclick="location.href='/company/{{ company.Ticker }}'">
+                    <td>{{ company['Company Name'] }}</td>
+                    <td>{{ company['Sector'] }}</td>
+                    <td class="score-cell">{{ company['Score'] }}</td>
+                    <td class="debt-cell">{{ company['Debt to Equity'] }}</td>
+                    <td class="margin-cell">{{ company['Profit Margin'] }}%</td>
+                    <td class="pe-cell">{{ company['P/E Ratio'] }}</td>
+                    <td class="holding-cell">{{ company['Promoter Holding'] }}%</td>
+                    <td class="revenue-cell">₹{{ company['Revenue'] }}</td>
+                    <td class="marketcap-cell">₹{{ company['Market Cap'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="note">
+            Click any company row for a detailed breakdown.
+        </div>
+
+        <div class="button-group">
+            <a href="{{ url_for('index') }}">🏠 India Value Buy Home</a>
+            <a href="{{ url_for('logic') }}">📊 See Scoring Logic</a>
+        </div>
+    </div>
+</body>
+</html>
