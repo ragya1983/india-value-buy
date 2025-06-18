@@ -13,110 +13,173 @@
         }
         header {
             background: linear-gradient(to right, #1a237e, #3949ab);
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             color: white;
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-transform: uppercase;
-        }
-        .hero {
-            max-width: 900px;
-            margin: 70px auto 40px auto;
-            padding: 40px 20px;
-            background: linear-gradient(to right, #e0f7fa, #ffffff);
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        .hero h1 {
             font-size: 48px;
-            margin-bottom: 15px;
-            color: #003366;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
-        .hero h2 {
-            font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            color: #005581;
+        header .subtitle {
+            font-size: 20px;
+            margin-top: 14px;
+            color: #e3e6f3;
+            font-weight: 400;
         }
-        .hero p {
-            font-size: 18px;
-            color: #444;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .cta {
-            margin-top: 30px;
-        }
-        .cta a {
-            display: inline-block;
-            margin: 10px 15px;
-            padding: 14px 28px;
-            background-color: #0077cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 18px;
-            box-shadow: 0 3px 8px rgba(0, 119, 204, 0.3);
-            transition: background-color 0.25s ease;
-        }
-        .cta a:hover {
-            background-color: #0050a0;
-        }
-        .why-india {
-            max-width: 900px;
+        .container {
+            max-width: 1200px;
             margin: 40px auto;
-            padding: 30px 20px;
+            display: flex;
+            gap: 40px;
+        }
+        /* Left and Right panels */
+        .panel {
+            flex: 1;
             background: #ffffffcc;
             border-radius: 12px;
+            padding: 30px 20px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             color: #003366;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .why-india h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-align: center;
-        }
-        .why-india p {
-            font-size: 18px;
-            line-height: 1.6;
+        .panel h2 {
+            font-size: 28px;
             margin-bottom: 15px;
+            font-weight: 700;
             text-align: center;
         }
         .info-boxes {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
         }
         .info-box {
-            flex: 1 1 250px;
+            padding: 15px;
             border-radius: 10px;
-            padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            text-align: center;
-            color: white;
+            color: #222;
         }
         .info-box.fdi {
             background: #1a237e;
+            color: #e0e0e0;
         }
         .info-box.tiger {
             background: #3949ab;
+            color: #e0e0e0;
         }
         .info-box.decade {
             background: #5c6bc0;
+            color: #e0e0e0;
+        }
+        .info-box.median {
+            background: #283593;
+            color: #e0e0e0;
+        }
+        .info-box.skilled {
+            background: #303f9f;
+            color: #e0e0e0;
+        }
+        .info-box.market {
+            background: #3949ab;
+            color: #e0e0e0;
+        }
+        /* Center panel (hero + buttons) */
+        .hero {
+            flex: 2;
+            padding: 40px 30px;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            justify-content: center;
+        }
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 0;
+            color: #003366;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #444;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+        .cta {
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta a {
+            padding: 16px 32px;
+            background-color: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(0, 119, 204, 0.35);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        .cta a:hover {
+            background-color: #0050a0;
+            box-shadow: 0 6px 18px rgba(0, 80, 160, 0.5);
+        }
+        .cta form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .cta input[type="text"] {
+            padding: 12px 14px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+            flex: 1;
+            font-size: 18px;
+            transition: border-color 0.3s ease;
+        }
+        .cta input[type="text"]:focus {
+            border-color: #0077cc;
+            outline: none;
+        }
+        .cta button {
+            background-color: #0077cc;
+            color: white;
+            padding: 12px 26px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta button:hover {
+            background-color: #0050a0;
+            box-shadow: 0 4px 12px rgba(0, 80, 160, 0.5);
         }
         footer {
             text-align: center;
             font-size: 14px;
             color: #777;
             margin: 50px 0 20px 0;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -124,62 +187,67 @@
 
 <header>
     India Value Buy
+    <div class="subtitle">A website that helps you find attractive companies to invest in.</div>
 </header>
 
-<div style="max-width: 900px; margin: 40px auto; display: flex; flex-direction: column; gap: 20px;">
-    <div style="background: #f0f4ff; border-radius: 12px; padding: 25px 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); color: #003366; font-size: 18px; text-align: center;">
-        A website that helps you find attractive companies to invest in.
-    </div>
+<div class="container">
 
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-        <div style="flex: 1 1 250px; background: #1a237e; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">💰 $4 Trillion Economy</h3>
-            <p>One of the fastest-growing major economies worldwide.</p>
-        </div>
-        <div style="flex: 1 1 250px; background: #3949ab; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">🌏 Rising Tiger</h3>
-            <p>Youthful population and expanding middle class driving growth.</p>
-        </div>
-        <div style="flex: 1 1 250px; background: #5c6bc0; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">🚀 India’s Decade</h3>
-            <p>2020s called the decade of transformative growth and innovation.</p>
-        </div>
-        <div style="flex: 1 1 250px; background: #283593; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">👶 Median Age 28</h3>
-            <p>Young workforce fueling growth.</p>
-        </div>
-        <div style="flex: 1 1 250px; background: #303f9f; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">🎓 Skilled Population</h3>
-            <p>Growing talent pool with global skills.</p>
-        </div>
-        <div style="flex: 1 1 250px; background: #3949ab; color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center;">
-            <h3 style="margin-bottom: 10px;">🏠 Huge Domestic Market</h3>
-            <p>One of the largest consumer bases worldwide.</p>
+    <!-- Left Panel: Why India -->
+    <div class="panel">
+        <h2>Why India Now?</h2>
+        <div class="info-boxes">
+            <div class="info-box fdi">
+                <h3>💰 $4 Trillion Economy</h3>
+                <p>One of the fastest-growing major economies worldwide.</p>
+            </div>
+            <div class="info-box tiger">
+                <h3>🌏 Rising Tiger</h3>
+                <p>Youthful population and expanding middle class driving growth.</p>
+            </div>
+            <div class="info-box decade">
+                <h3>🚀 India’s Decade</h3>
+                <p>2020s called the decade of transformative growth and innovation.</p>
+            </div>
         </div>
     </div>
 
-    <div style="background: #f0f4ff; border-radius: 12px; padding: 25px 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); color: #003366; font-size: 18px; text-align: center;">
-        Our platform helps you discover undervalued companies to invest smartly and early.
+    <!-- Center Panel: Hero content + buttons -->
+    <div class="hero">
+        <h1>Find value. Spot potential. Invest smartly.</h1>
+        <p>Our tool surfaces financially distressed or undervalued Indian companies — firms that may be struggling now, but hold long-term potential.</p>
+
+        <div class="cta">
+            <a href="/logic">💡 See Our Simple Logic</a>
+            <a href="/explore">📈 Explore Attractive Companies</a>
+            <form method="get" action="/search">
+                <input type="text" name="ticker" placeholder="Enter Ticker (e.g. TCS.NS)" />
+                <button type="submit">🔍 Search</button>
+            </form>
+        </div>
     </div>
+
+    <!-- Right Panel: More Why India -->
+    <div class="panel">
+        <h2>More Reasons to Invest</h2>
+        <div class="info-boxes">
+            <div class="info-box median">
+                <h3>👶 Median Age 28</h3>
+                <p>Young workforce fueling growth.</p>
+            </div>
+            <div class="info-box skilled">
+                <h3>🎓 Skilled Population</h3>
+                <p>Growing talent pool with global skills.</p>
+            </div>
+            <div class="info-box market">
+                <h3>🏠 Huge Domestic Market</h3>
+                <p>One of the largest consumer bases worldwide.</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="hero" style="max-width: 900px; margin: 40px auto 60px auto; padding: 40px 20px; background: linear-gradient(to right, #e0f7fa, #ffffff); border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); text-align: center;">
-    <h2 style="font-size: 28px; margin-bottom: 15px; color: #003366;">Find value. Spot potential. Invest smartly.</h2>
-    <p style="font-size: 16px; color: #444; line-height: 1.6; max-width: 700px; margin: 0 auto 30px auto;">
-        Our tool surfaces financially distressed or undervalued Indian companies — firms that may be struggling now, but hold long-term potential.
-    </p>
-
-    <div class="cta" style="margin-top: 0;">
-        <a href="/logic" style="display: inline-block; margin: 10px 15px; padding: 14px 28px; background-color: #0077cc; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 18px; box-shadow: 0 3px 8px rgba(0, 119, 204, 0.3); transition: background-color 0.25s ease;">💡 See Our Simple Logic →</a>
-        <a href="/explore" style="display: inline-block; margin: 10px 15px; padding: 14px 28px; background-color: #0077cc; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 18px; box-shadow: 0 3px 8px rgba(0, 119, 204, 0.3); transition: background-color 0.25s ease;">📈 Explore Attractive Companies →</a>
-        <form method="get" action="/search" style="display: inline-flex; gap: 8px; align-items: center; margin-top: 10px;">
-            <input type="text" name="ticker" placeholder="Enter Ticker (e.g. TCS.NS)" style="padding: 10px; border-radius: 4px; border: 1px solid #ccc; width: 220px;" />
-            <button type="submit" style="background-color: #0077cc; color: white; padding: 10px 18px; border-radius: 4px; border: none; font-weight: bold; cursor: pointer;">🔍 Search by Ticker</button>
-        </form>
-    </div>
-</div>
-
-<footer style="text-align: center; font-size: 14px; color: #777; margin: 50px 0 20px 0;">
+<footer>
     <p>This web application is a prototype created as part of the CS50 final project. It analyzes financial health of over <strong>1,116 Indian listed companies</strong> to help identify potential acquisition targets.</p>
 </footer>
 
